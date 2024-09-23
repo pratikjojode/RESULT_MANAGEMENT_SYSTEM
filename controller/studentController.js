@@ -38,3 +38,24 @@ export const studentregisterController = async (req, res) => {
     });
   }
 };
+
+// login the student contoller
+
+export const studentLoginConttroller = async (req, res) => {
+  try {
+    const { email } = req.body;
+    const student = await studentModel.findOne({ email });
+    return res.status(200).send({
+      success: true,
+      message: "Student Login succefully",
+      student,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      success: false,
+      message: "Login falied!!!",
+      error,
+    });
+  }
+};
