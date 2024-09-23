@@ -4,24 +4,34 @@ import dotenv from "dotenv";
 import morgan from "morgan";
 import colors from "colors";
 import connectDb from "./config/db.js";
-// rest object
+import studentRoutes from "./routes/studentsRoutes.js";
+import adminRoutes from "./routes/adminRoutes.js";
 
+// rest object
 const app = express();
 
-// use the env file in the prioject
+// use the env file in the project
 dotenv.config();
 connectDb();
-// midelwares
+
+// middlewares
 app.use(morgan("dev"));
+app.use(express.json());
+
+// routes
+app.use("/api/v1/student", studentRoutes);
+app.use("/api/v1/admin", adminRoutes);
 
 // get the file on browser
 app.get("/", (req, res) => {
-  res.send("<h1>Welcome to the result managment system</h1>");
+  res.send("<h1>Welcome to the result management system</h1>");
 });
-// port cofig
+
+// port config
 const PORT = process.env.PORT || 8080;
-// listing the portal
-app.listen(8080, () => {
+
+// listening on the port
+app.listen(PORT, () => {
   console.log(
     `Result management System server is running on port ${PORT}`.bgBlack.white
   );
