@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
+import JWT from "jsonwebtoken";
 const MarksSchema = new mongoose.Schema({
   attendance: { type: Number, default: 0 },
   projectReview: { type: Number, default: 0 },
@@ -44,5 +45,17 @@ studentSchema.pre("save", function (next) {
   console.log("Generated studentId:", this.studentId);
   next();
 });
+
+// compare the password
+studentSchema.methods.comparePassword = async function (userPassword) {
+  const isMatch = await bcrypt.compare(userPassword, this.password);
+  return isMatch;
+};
+// josn webtoken
+studentSchema.methods.createJWT = function () {
+  return JWT.sign({ userId: this._id }, process.env.SECRET_KEY_JWT, {
+    expiresIn: "4d",
+  });
+};
 
 export default mongoose.model("Student", studentSchema);

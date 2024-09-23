@@ -24,10 +24,13 @@ export const studentregisterController = async (req, res) => {
       password,
     });
 
+    const token = student.createJWT();
+
     res.status(201).send({
       success: true,
       message: "Student registered successfully.",
       student,
+      token,
     });
   } catch (error) {
     console.log(error);
@@ -43,12 +46,21 @@ export const studentregisterController = async (req, res) => {
 
 export const studentLoginConttroller = async (req, res) => {
   try {
-    const { email } = req.body;
+    const { email, password } = req.body;
     const student = await studentModel.findOne({ email });
+    const isMatch = await student.comparePassword(password);
+    if (!isMatch) {
+      res.status(500).send({
+        success: false,
+        message: "Something went wrong",
+      });
+    }
+    const token = student.createJWT();
     return res.status(200).send({
       success: true,
       message: "Student Login succefully",
       student,
+      token,
     });
   } catch (error) {
     console.log(error);
