@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-
+import bcrypt from "bcryptjs";
 const MarksSchema = new mongoose.Schema({
   attendance: { type: Number, default: 0 },
   projectReview: { type: Number, default: 0 },
@@ -32,12 +32,16 @@ const studentSchema = new mongoose.Schema({
   },
 });
 
-// Hook to generate a unique studentId
+studentSchema.pre("save", async function (next) {
+  const salt = await bcrypt.genSalt(10);
+  this.password = await bcrypt.hash(this.password, salt);
+});
+
 studentSchema.pre("save", function (next) {
   if (!this.studentId) {
-    this.studentId = `STU${Date.now()}`; // Generate a unique studentId
+    this.studentId = `STU${Date.now()}`;
   }
-  console.log("Generated studentId:", this.studentId); // Debug log
+  console.log("Generated studentId:", this.studentId);
   next();
 });
 
