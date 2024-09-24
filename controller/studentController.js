@@ -71,3 +71,35 @@ export const studentLoginConttroller = async (req, res) => {
     });
   }
 };
+
+export const getStudentOnIdController = async (req, res) => {
+  try {
+    const { studentId } = req.body;
+    if (!studentId) {
+      return res.status(400).send({
+        success: false,
+        message: "Student ID not provided",
+      });
+    }
+
+    const student = await studentModel.findOne({ studentId });
+    if (!student) {
+      return res.status(404).send({
+        success: false,
+        message: "No student found with the given ID",
+      });
+    }
+    res.status(200).send({
+      success: true,
+      message: "Student fetched successfully",
+      student,
+    });
+  } catch (error) {
+    console.error("Error fetching student by ID:", error);
+    res.status(500).send({
+      success: false,
+      message: "An error occurred while fetching the student",
+      error: error.message,
+    });
+  }
+};
