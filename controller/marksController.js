@@ -1,8 +1,8 @@
 import fs from "fs";
-import path from "path"; // Import path
-import xlsx from "xlsx"; // Import the xlsx library
-import Student from "../models/studentModel.js"; // Import your Student model
-import { __dirname } from "../utils/getDirname.js"; // Import __dirname from your utility
+import path from "path";
+import xlsx from "xlsx";
+import Student from "../models/studentModel.js";
+import { __dirname } from "../utils/getDirname.js";
 
 export const uploadMarksController = async (req, res) => {
   try {
@@ -20,7 +20,7 @@ export const uploadMarksController = async (req, res) => {
     // Read the Excel file
     const workbook = xlsx.readFile(filePath);
     const sheetName = workbook.SheetNames[0]; // Get the first sheet
-    const data = xlsx.utils.sheet_to_json(workbook.Sheets[sheetName]); // Convert the sheet to JSON
+    const data = xlsx.utils.sheet_to_json(workbook.Sheets[sheetName]);
 
     // Log the extracted data for debugging
     console.log("Extracted data from Excel:", data);
@@ -67,13 +67,12 @@ export const uploadMarksController = async (req, res) => {
       }
     });
 
-    // Wait for all student data to be saved/updated
     await Promise.all(studentPromises);
 
     return res.status(200).json({
       success: true,
       message: "Marks uploaded successfully.",
-      data: data, // Return the Excel data in the response
+      data: data,
     });
   } catch (error) {
     console.error("Error processing file:", error);
