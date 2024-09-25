@@ -117,7 +117,7 @@ export const getAllStudentController = async (req, res) => {
     console.log(error);
     res.status(500).send({
       success: false,
-      message: "Soemthingwent wtong while  fetching students",
+      message: "Soemthingwent wrong while  fetching students",
     });
   }
 };
