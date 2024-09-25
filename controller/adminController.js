@@ -37,6 +37,8 @@ export const registerAdmin = async (req, res) => {
 
     res.status(201).json({
       message: "Admin registered successfully",
+      name,
+      email,
       token,
     });
   } catch (error) {
@@ -72,6 +74,7 @@ export const loginAdmin = async (req, res) => {
 
     res.json({
       message: "Logged in successfully",
+      email,
       token,
     });
   } catch (error) {
