@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
 import JWT from "jsonwebtoken";
+
 const MarksSchema = new mongoose.Schema({
   attendance: { type: Number, default: 0 },
   projectReview: { type: Number, default: 0 },
