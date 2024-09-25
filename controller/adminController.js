@@ -1,4 +1,4 @@
-import Admin from "../models/adminModel.js"; 
+import Admin from "../models/adminModel.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
@@ -33,7 +33,7 @@ export const registerAdmin = async (req, res) => {
       },
     };
 
-    const token = jwt.sign(payload, "secretKey", { expiresIn: "1h" });
+    const token = jwt.sign(payload, "secretKey", { expiresIn: "5d" });
 
     res.status(201).json({
       message: "Admin registered successfully",
