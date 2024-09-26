@@ -6,7 +6,6 @@ import { __dirname } from "../utils/getDirname.js";
 
 export const uploadMarksController = async (req, res) => {
   try {
-    // Check if a file was uploaded
     if (!req.file) {
       return res.status(400).json({
         success: false,
@@ -19,10 +18,9 @@ export const uploadMarksController = async (req, res) => {
 
     // Read the Excel file
     const workbook = xlsx.readFile(filePath);
-    const sheetName = workbook.SheetNames[0]; // Get the first sheet
+    const sheetName = workbook.SheetNames[0];
     const data = xlsx.utils.sheet_to_json(workbook.Sheets[sheetName]);
 
-    // Log the extracted data for debugging
     console.log("Extracted data from Excel:", data);
 
     // Loop through the data and save or update to MongoDB

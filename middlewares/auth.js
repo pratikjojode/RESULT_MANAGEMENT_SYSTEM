@@ -1,31 +1,44 @@
-// middleware/auth.js
-import jwt from "jsonwebtoken";
-import studentModel from "../models/studentModel.js";
-// Verify if the user is an admin
-export const verifyAdmin = async (req, res, next) => {
+import JWT from "jsonwebtoken";
+import Student from "../models/studentModel.js"; // Adjust the path based on your structure
+
+export const isAuthenticated = async (req, res, next) => {
+  const authHeader = req.headers.authorization;
+  console.log("Authorization Header:", authHeader); // Log the auth header for debugging
+
+  if (!authHeader || !authHeader.startsWith("Bearer ")) {
+    return res
+      .status(401)
+      .json({ message: "Authentication failed. No token provided." });
+  }
+
+  const token = authHeader.split(" ")[1];
+
   try {
-    const token = req.headers.authorization.split(" ")[1];
-    if (!token) {
-      return res
-        .status(401)
-        .json({ success: false, message: "No token provided" });
-    }
+    const decoded = JWT.verify(token, process.env.SECRET_KEY_JWT);
+    const user = await Student.findById(decoded.userId);
 
-    const decoded = jwt.verify(token, process.env.SECRET_KEY_JWT);
-    const student = await studentModel.findById(decoded.userId);
-
-    if (student.role !== "admin") {
-      return res
-        .status(403)
-        .json({ success: false, message: "Access forbidden. Admins only." });
+    if (!user) {
+      return res.status(404).json({ message: "User not found." });
     }
 
     req.user = user;
     next();
   } catch (error) {
-    console.log(error);
+    console.error("Token verification error:", error.message); // Log any error that occurs during token verification
     return res
       .status(401)
-      .json({ success: false, message: "Authentication failed." });
+      .json({ message: "Authentication failed. Invalid token." });
   }
+};
+
+export const isAdmin = (req, res, next) => {
+  if (!req.user) {
+    return res.status(401).json({ message: "Not authenticated." });
+  }
+
+  if (req.user.role !== "admin") {
+    return res.status(403).json({ message: "Access denied. Admins only." });
+  }
+
+  next();
 };

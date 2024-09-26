@@ -1,8 +1,7 @@
 import Admin from "../models/adminModel.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import xlsx from "xlsx";
-import studentModel from "../models/studentModel.js";
+
 // Register Admin
 export const registerAdmin = async (req, res) => {
   const { name, email, password } = req.body;
@@ -80,62 +79,5 @@ export const loginAdmin = async (req, res) => {
     });
   } catch (error) {
     res.status(500).json({ message: "Server error" });
-  }
-};
-
-// Controller to upload and process marks from an Excel file
-export const uploadMarksController = async (req, res) => {
-  try {
-    // Check if the file exists
-    if (!req.file) {
-      return res
-        .status(400)
-        .json({ success: false, message: "No file uploaded" });
-    }
-
-    // Read the file buffer using xlsx
-    const workbook = xlsx.read(req.file.buffer, { type: "buffer" });
-    const sheetName = workbook.SheetNames[0];
-    const sheet = workbook.Sheets[sheetName];
-    const data = xlsx.utils.sheet_to_json(sheet);
-
-    // Iterate through the extracted data and update marks
-    for (let row of data) {
-      const {
-        studentId,
-        attendance,
-        projectReview,
-        assessment,
-        projectSubmission,
-        linkedInPost,
-      } = row;
-
-      const student = await studentModel.findOne({ studentId });
-
-      if (student) {
-        student.marks = {
-          attendance: attendance || 0,
-          projectReview: projectReview || 0,
-          assessment: assessment || 0,
-          projectSubmission: projectSubmission || 0,
-          linkedInPost: linkedInPost || 0,
-        };
-        await student.save();
-      } else {
-        console.log(`Student with ID ${studentId} not found`);
-      }
-    }
-
-    res.status(200).json({
-      success: true,
-      message: "Marks uploaded and saved successfully.",
-    });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({
-      success: false,
-      message: "Error in uploading marks",
-      error,
-    });
   }
 };
