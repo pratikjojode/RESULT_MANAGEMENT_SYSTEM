@@ -6,14 +6,14 @@ const HomePage = () => {
     <Layout>
       {/* Left column content */}
       <div className="left-column">
-        <h2>Left Column Content</h2>
-        <p>This is where you can put the content for the left column.</p>
+        <h1>Welcome to Result Management System</h1>
+        <p>Manage students' attendance, project reviews, and LinkedIn posts all in one place.</p>
       </div>
 
       {/* Right column content */}
       <div className="right-column">
-        <h2>Right Column Content</h2>
-        <p>This is where you can put the content for the right column.</p>
+        <h1>Advantages of Result Management System</h1>
+        <p>The most significant advantage of Result Management System is that it can be used efficiently by both the admins(Teachers) as well as the students.</p>
       </div>
     </Layout>
   );

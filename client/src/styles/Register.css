@@ -1,20 +1,72 @@
-.register-container {
+/* Register page container styling */
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   max-width: 400px;
-  margin: auto;
+  margin: 50px auto;
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
   background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Input fields */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  margin-bottom: 15px;
+  padding: 12px 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease-in-out;
+}
+
+/* Input focus effect */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Button styling */
+button[type="submit"] {
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Error and success messages */
+p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+p[style="color: red"] {
+  color: #e74c3c;
+}
+
+p[style="color: green"] {
+  color: #27ae60;
+}
+
+/* Title styling */
 h2 {
   text-align: center;
-}
-
-.error {
-  color: red;
-}
-
-.success {
-  color: green;
+  margin-bottom: 20px;
+  color: #333;
+  font-family: 'Arial', sans-serif;
 }

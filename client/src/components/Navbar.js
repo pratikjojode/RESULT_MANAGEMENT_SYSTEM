@@ -10,7 +10,7 @@ const NewNavbar = () => {
       <div className="new-container">
         {/* Brand Logo */}
         <Link className="new-navbar-brand" to="/">
-          Result Management
+          Result Management System
         </Link>
         {/* Hamburger Toggle */}
         <button

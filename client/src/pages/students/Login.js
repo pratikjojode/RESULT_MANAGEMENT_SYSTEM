@@ -42,10 +42,15 @@ const Login = () => {
     }
   };
 
+  // Navigate to register page
+  const handleNavigateToRegister = () => {
+    navigate("/register");
+  };
+
   return (
     <Layout>
       <div className="login-container">
-        <h2>Login</h2>
+        <h2>Login To Proceed</h2>
         <form onSubmit={handleSubmit}>
           <input
             type="email"
@@ -65,8 +70,17 @@ const Login = () => {
           />
           <button type="submit">Login</button>
         </form>
+
         {error && <p style={{ color: "red" }}>{error}</p>}
         {success && <p style={{ color: "green" }}>{success}</p>}
+
+        {/* Button to redirect to the registration page */}
+        <p>
+          Don't have an account?{" "}
+          <button onClick={handleNavigateToRegister} className="register-button">
+            Register here
+          </button>
+        </p>
       </div>
     </Layout>
   );
