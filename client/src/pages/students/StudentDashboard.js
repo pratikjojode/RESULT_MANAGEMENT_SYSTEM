@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import "../../styles/StudentDashboard.css"; // Import your CSS file
+import DashbordInfo from "../../components/DashbordInfo"; // Assuming this is correctly imported
 
 const StudentDashboard = ({ studentId }) => {
   const [activeTab, setActiveTab] = useState("profile"); // Default tab
@@ -41,6 +42,18 @@ const StudentDashboard = ({ studentId }) => {
             <strong>Current Student ID:</strong> You will receive your student
             ID from your authority: <em>EX: STUXXXXXXXXXX</em>
           </li>
+
+          {/* Properly add the dashboard link here */}
+          <li>
+            <Link
+              to="dashbaordInfo" // Add the correct route if needed
+              className={activeTab === "dashboard" ? "active" : ""}
+              onClick={() => setActiveTab("dashboard")}
+            >
+              Dashboard
+            </Link>
+          </li>
+
           <li>
             <Link
               to="/home"
@@ -53,7 +66,6 @@ const StudentDashboard = ({ studentId }) => {
         </ul>
       </aside>
       <main className="main-content">
-        <h3>Welcome to studentDashbaord</h3>
         <Outlet />
       </main>
     </div>

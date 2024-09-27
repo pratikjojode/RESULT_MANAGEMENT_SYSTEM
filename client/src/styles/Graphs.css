@@ -1,0 +1,31 @@
+.graphs {
+  margin: 10px 10px; /* Center the graphs container */
+  display: flex; /* Center-align text */
+}
+
+.graphs h2 {
+  font-size: 24px; /* Main title size */
+  margin-bottom: 20px; /* Space below the title */
+}
+
+.graph-container {
+  width: 400px; /* Set the desired width for each graph */
+  height: 200px; /* Set the height for each graph */
+  /* Space between graphs and center alignment */
+  background-color: rgba(
+    239,
+    177,
+    177,
+    0.361
+  ); /* Light background for contrast */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+  padding: 10px; /* Padding inside the graph container */
+  margin-right: 10px;
+}
+
+.graph-container h3 {
+  font-size: 20px; /* Sub-title size */
+  margin-bottom: 10px; /* Space below the sub-title */
+  color: #333; /* Darker text color for better readability */
+}
