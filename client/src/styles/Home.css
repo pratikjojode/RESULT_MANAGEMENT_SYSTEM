@@ -1,0 +1,59 @@
+/* General styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-image: url('../assets/image\ home.avif'); /* Add your background image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+  }
+  
+  /* Layout styling */
+  .left-column, .right-column {
+    background: rgba(255, 255, 255, 0.8); /* Slightly transparent background for readability */
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+  }
+  
+  .left-column {
+    width: 45%;
+    float: left;
+    margin-right: 5%;
+  }
+  
+  .right-column {
+    width: 45%;
+    float: right;
+  }
+  
+  h1 {
+    font-size: 28px;
+    color: #333;
+    text-align: center;
+  }
+  
+  p {
+    font-size: 18px;
+    color: #555;
+    text-align: justify;
+  }
+  
+  /* Ensuring responsiveness */
+  @media (max-width: 768px) {
+    .left-column, .right-column {
+      width: 100%;
+      float: none;
+      margin: 10px auto;
+    }
+    
+    h1 {
+      font-size: 24px;
+    }
+    
+    p {
+      font-size: 16px;
+    }
+  }
+  
