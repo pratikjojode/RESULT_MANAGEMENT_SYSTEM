@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios"; // Ensure axios is imported
+import "../../styles/SearchResults.css"; // Import your CSS file
 
 const SearchResults = () => {
   const [results, setResults] = useState([]);
@@ -18,11 +19,11 @@ const SearchResults = () => {
 
     try {
       const response = await axios.get(
-        `http://localhost:8080/api/v1/student/getStudentresult/${query}` // Updated URL
+        `/api/v1/student/getStudentresult/${query}`
       );
 
       if (response.data.success) {
-        setResults([response.data.student]); // Set the student data in results
+        setResults([response.data.student]);
       } else {
         setError(response.data.message);
       }
@@ -34,31 +35,48 @@ const SearchResults = () => {
   };
 
   return (
-    <div>
-      <h3>Search by Student ID</h3>
-      <input
-        type="text"
-        placeholder="Enter Student ID"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-      />
-      <button onClick={handleSearch}>Search</button>
+    <div className="search-results-container">
+      <h3 className="search-title">Search by Student ID</h3>
+      <div className="search-input">
+        <input
+          type="text"
+          placeholder="Enter Student ID"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        />
+        <button onClick={handleSearch}>Search</button>
+      </div>
 
-      {loading && <p>Loading...</p>}
-
+      {loading && <p className="loading">Loading...</p>}
       {error && <div className="error">{error}</div>}
 
       {results.length > 0 && (
-        <div>
-          <h4>Search Results:</h4>
-          <ul>
+        <div className="results">
+          <h4 className="results-title">Search Results:</h4>
+          <ul className="results-list">
             {results.map((result) => (
-              <li key={result.studentId}>
-                <strong>Student ID:</strong> {result.studentId},
-                <strong> Name:</strong> {result.name},<strong> Email:</strong>{" "}
-                {result.email},<strong> Attendance:</strong>{" "}
-                {result.marks.attendance},<strong> Project Review:</strong>{" "}
-                {result.marks.projectReview}
+              <li key={result.studentId} className="result-item">
+                <div className="result-info">
+                  <strong>Student ID:</strong> {result.studentId}
+                </div>
+                <div className="result-info">
+                  <strong>Name:</strong> {result.name}
+                </div>
+                <div className="result-info">
+                  <strong>Email:</strong> {result.email}
+                </div>
+                <div className="result-info">
+                  <strong>Attendance:</strong> {result.marks.attendance}
+                </div>
+                <div className="result-info">
+                  <strong>Project Review:</strong> {result.marks.projectReview}
+                </div>
+                <div className="result-info">
+                  <strong>Assessment:</strong> {result.marks.assessment}
+                </div>
+                <div className="result-info">
+                  <strong>LinkedIn Post:</strong> {result.marks.linkedInPost}
+                </div>
               </li>
             ))}
           </ul>

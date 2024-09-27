@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom"; // Import useParams
+import "../../styles/Profile.css"; // Import your CSS file
 
 const Profile = () => {
   const { studentId } = useParams(); // Get studentId from URL parameters

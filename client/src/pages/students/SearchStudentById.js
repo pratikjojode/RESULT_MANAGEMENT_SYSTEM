@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
-
+import "../../styles/searchId.css";
 const SearchStudentById = () => {
   const [studentId, setStudentId] = useState(""); // State to hold student ID
   const navigate = useNavigate(); // Hook to navigate
@@ -15,7 +15,7 @@ const SearchStudentById = () => {
   };
 
   return (
-    <div>
+    <div className="serach-id">
       <h2>Search Student by ID</h2>
       <input
         type="text"

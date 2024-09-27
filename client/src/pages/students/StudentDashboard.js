@@ -3,7 +3,6 @@ import { Link, Outlet } from "react-router-dom";
 import "../../styles/StudentDashboard.css"; // Import your CSS file
 
 const StudentDashboard = ({ studentId }) => {
-  // Accept studentId as a prop
   const [activeTab, setActiveTab] = useState("profile"); // Default tab
 
   return (
@@ -14,27 +13,48 @@ const StudentDashboard = ({ studentId }) => {
           <li>
             <Link
               to={`profile/${studentId}`}
+              className={activeTab === "profile" ? "active" : ""}
               onClick={() => setActiveTab("profile")}
             >
-              {/* Updated to include studentId */}
               Profile
             </Link>
           </li>
           <li>
-            <Link to="search" onClick={() => setActiveTab("search")}>
+            <Link
+              to="search"
+              className={activeTab === "search" ? "active" : ""}
+              onClick={() => setActiveTab("search")}
+            >
               Search Student by ID
             </Link>
           </li>
           <li>
-            <Link to="results" onClick={() => setActiveTab("results")}>
+            <Link
+              to="results"
+              className={activeTab === "results" ? "active" : ""}
+              onClick={() => setActiveTab("results")}
+            >
               View Results
+            </Link>
+          </li>
+          <li className="student-id">
+            <strong>Current Student ID:</strong> You will receive your student
+            ID from your authority: <em>EX: STUXXXXXXXXXX</em>
+          </li>
+          <li>
+            <Link
+              to="/home"
+              className={activeTab === "home" ? "active" : ""}
+              onClick={() => setActiveTab("home")}
+            >
+              Home
             </Link>
           </li>
         </ul>
       </aside>
       <main className="main-content">
         <h3>{activeTab.charAt(0).toUpperCase() + activeTab.slice(1)} View</h3>
-        <Outlet /> {/* This will render the matched child route */}
+        <Outlet />
       </main>
     </div>
   );

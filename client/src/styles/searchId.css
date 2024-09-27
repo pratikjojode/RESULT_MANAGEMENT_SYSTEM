@@ -1,0 +1,13 @@
+.serach-id {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #384b70;
+  border-radius: 5px;
+}
+button {
+  padding: 10px 30px;
+  margin-top: 20px;
+  width: 100%;
+  font-weight: 500;
+}
