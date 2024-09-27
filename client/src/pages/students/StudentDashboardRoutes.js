@@ -5,6 +5,7 @@ import Profile from "./Profile"; // Profile component
 import SearchStudentById from "./SearchStudentById"; // Search component
 import SearchResults from "./SearchResults";
 import HomePage from "../../components/Home";
+import DashbordInfo from "../../components/DashbordInfo";
 
 const StudentDashboardRoutes = () => {
   return (
@@ -15,6 +16,7 @@ const StudentDashboardRoutes = () => {
         <Route path="search" element={<SearchStudentById />} />
         <Route path="results" element={<SearchResults />} />
         <Route path="/home" element={<HomePage />} />
+        <Route path="/dashbaordInfo" element={<DashbordInfo />} />
       </Route>
     </Routes>
   );
