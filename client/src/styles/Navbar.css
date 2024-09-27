@@ -1,0 +1,145 @@
+/* Import Poppins font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+/* New Navbar Styles */
+.new-navbar {
+  background-color: #1a1a1a; /* Dark background */
+  padding: 0.5rem 1rem; /* Padding for the navbar */
+  display: flex;
+  justify-content: space-between; /* Align brand on the left and menu on the right */
+  align-items: center; /* Center vertically */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  position: relative; /* Needed for the absolute positioning of the dropdown */
+  z-index: 1000;
+  font-family: "Poppins", sans-serif; /* Use Poppins font */
+}
+
+.new-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.new-navbar-brand {
+  font-weight: 600; /* Bold font weight */
+  color: #00bfff; /* Bright brand color */
+  font-size: 2rem; /* Larger brand font size */
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.new-navbar-brand:hover {
+  color: #ffffff; /* Change color on hover */
+}
+
+.new-navbar-toggler {
+  border: none;
+  background: transparent;
+  display: none; /* Hide toggle button by default */
+}
+
+/* Hamburger icon */
+.new-navbar-toggler-icon {
+  width: 30px; /* Size of the hamburger icon */
+  height: 3px;
+  background-color: #00bfff; /* Color of the hamburger icon */
+  display: block;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.new-navbar-toggler-icon::before,
+.new-navbar-toggler-icon::after {
+  content: "";
+  width: 30px; /* Size of the hamburger icon bars */
+  height: 3px;
+  background-color: #00bfff; /* Color of the hamburger icon bars */
+  position: absolute;
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+.new-navbar-toggler-icon::before {
+  top: -8px; /* Positioning for the top bar */
+}
+
+.new-navbar-toggler-icon::after {
+  top: 8px; /* Positioning for the bottom bar */
+}
+
+.new-navbar-toggler[aria-expanded="true"] .new-navbar-toggler-icon {
+  background-color: transparent; /* Hide the middle bar when open */
+}
+
+.new-navbar-toggler[aria-expanded="true"] .new-navbar-toggler-icon::before {
+  transform: rotate(45deg); /* Rotate top bar */
+  top: 0; /* Align to the center */
+}
+
+.new-navbar-toggler[aria-expanded="true"] .new-navbar-toggler-icon::after {
+  transform: rotate(-45deg); /* Rotate bottom bar */
+  top: 0; /* Align to the center */
+}
+
+.new-navbar-nav {
+  display: flex; /* Use flexbox for nav items */
+  align-items: center;
+  gap: 2rem; /* Adds space between the nav items */
+  transition: max-height 0.3s ease; /* Smooth transition */
+}
+
+.new-navbar-nav.show {
+  display: flex; /* Show nav items when toggled */
+}
+
+.new-nav-link {
+  color: #ffffff; /* Link color */
+  font-size: 1.2rem; /* Font size for links */
+  text-transform: uppercase;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.new-nav-link:hover {
+  color: #00bfff; /* Bright color on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .new-navbar {
+    flex-direction: column; /* Stack items vertically on mobile */
+    padding: 1rem; /* Increased padding for mobile */
+  }
+
+  .new-navbar-toggler {
+    display: block; /* Show the hamburger icon on mobile */
+  }
+
+  .new-navbar-nav {
+    display: none; /* Hide nav items on mobile by default */
+    flex-direction: column;
+    width: 100%;
+    margin-top: 0.5rem; /* Space between navbar and links */
+    max-height: 0; /* Start with a height of 0 */
+    overflow: hidden; /* Hide overflow */
+  }
+
+  .new-navbar-nav.show {
+    display: flex; /* Show nav items when toggled */
+    max-height: 300px; /* Set a maximum height when expanded */
+  }
+
+  .new-nav-link {
+    text-align: center; /* Center link text */
+    font-size: 1.5rem; /* Larger font size on mobile */
+    margin-bottom: 1rem; /* Space between links */
+    padding: 0.5rem 1rem; /* Add padding for links */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+  }
+
+  .new-nav-link:hover {
+    background-color: rgba(0, 191, 255, 0.2); /* Light background on hover */
+  }
+}

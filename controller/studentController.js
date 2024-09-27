@@ -1,5 +1,6 @@
 import studentModel from "../models/studentModel.js";
 
+// Student registration controller
 export const studentregisterController = async (req, res) => {
   try {
     const { name, email, password, role } = req.body;
@@ -25,7 +26,7 @@ export const studentregisterController = async (req, res) => {
       role,
     });
 
-    const token = student.createJWT();
+    const token = student.createJWT(); // Ensure this creates a token successfully
 
     res.status(201).send({
       success: true,
@@ -34,41 +35,51 @@ export const studentregisterController = async (req, res) => {
       token,
     });
   } catch (error) {
-    console.log(error);
+    console.error("Registration error:", error); // Improved logging for errors
     res.status(500).send({
       success: false,
       message: "Error in registering the student.",
-      error,
+      error: error.message, // Provide more informative error messages
     });
   }
 };
 
-// login the student contoller
-
+// Student login controller
 export const studentLoginConttroller = async (req, res) => {
   try {
     const { email, password } = req.body;
     const student = await studentModel.findOne({ email });
-    const isMatch = await student.comparePassword(password);
-    if (!isMatch) {
-      res.status(500).send({
+
+    if (!student) {
+      return res.status(404).send({
         success: false,
-        message: "Something went wrong",
+        message: "Student not found",
       });
     }
-    const token = student.createJWT();
+
+    const isMatch = await student.comparePassword(password);
+
+    if (!isMatch) {
+      return res.status(401).send({
+        success: false,
+        message: "Invalid password",
+      });
+    }
+
+    const token = student.createJWT(); // Ensure this creates a token successfully
+
     return res.status(200).send({
       success: true,
-      message: "Student Login succefully",
+      message: "Student logged in successfully",
       student,
       token,
     });
   } catch (error) {
-    console.log(error);
-    res.status(500).send({
+    console.error("Login error:", error); // Improved logging for errors
+    return res.status(500).send({
       success: false,
-      message: "Login falied!!!",
-      error,
+      message: "Login failed!!!",
+      error: error.message, // Provide more informative error messages
     });
   }
 };

@@ -1,9 +1,22 @@
 import React from "react";
-import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
+import AboutPage from "./components/AboutPage";
+import ContactPage from "./components/ContactPage";
+import Login from "./pages/students/Login";
+import Register from "./pages/students/Register";
+
 const App = () => {
   return (
     <div>
-      <h1>Hello</h1>
+      <Routes>
+        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
     </div>
   );
 };

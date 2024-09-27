@@ -1,0 +1,34 @@
+/* Layout Styles */
+
+.layout-container {
+  display: flex;
+  padding: 2rem;
+  margin-top: 80px; /* To push content below the fixed navbar */
+  gap: 2rem; /* Gap between the two columns */
+  justify-content: space-between;
+}
+
+.layout-container > * {
+  flex: 1;
+}
+
+/* Optional: Styling for Columns */
+.left-column {
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.right-column {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Layout for smaller screens */
+@media (max-width: 768px) {
+  .layout-container {
+    flex-direction: column; /* Stacks the columns vertically on small screens */
+    gap: 1rem;
+  }
+}
