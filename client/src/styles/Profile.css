@@ -5,14 +5,13 @@
 }
 
 body {
-  background-color: #e9eff5;
   font-family: "Arial", sans-serif;
 }
 
 .profile {
   max-width: 700px;
   padding: 40px;
-  background-color: #384b70;
+  background-color: rgba(179, 179, 152, 0.931);
   margin: 50px auto;
   border-radius: 15px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);

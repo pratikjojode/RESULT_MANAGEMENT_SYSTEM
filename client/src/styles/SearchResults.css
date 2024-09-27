@@ -1,3 +1,22 @@
 .search-results-container {
-  background-color: beige;
+  padding: 20px;
+
+  margin: 0 auto;
+  background-color: rgba(179, 179, 152, 0.931);
+}
+button {
+  background-color: black;
+  color: white;
+  border: 0;
+}
+.results {
+  background-color: rgba(224, 217, 237, 0.483);
+  margin-top: 20px;
+  padding: 10px;
+}
+.results-title {
+  color: black;
+}
+.search-title {
+  color: black;
 }

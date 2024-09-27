@@ -53,7 +53,7 @@ const StudentDashboard = ({ studentId }) => {
         </ul>
       </aside>
       <main className="main-content">
-        <h3>{activeTab.charAt(0).toUpperCase() + activeTab.slice(1)} View</h3>
+        <h3>Welcome to studentDashbaord</h3>
         <Outlet />
       </main>
     </div>

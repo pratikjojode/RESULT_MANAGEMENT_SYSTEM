@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import axios from "axios"; // Ensure axios is imported
-import "../../styles/SearchResults.css"; // Import your CSS file
+import axios from "axios";
+import "../../styles/SearchResults.css"; // Import CSS file
 
 const SearchResults = () => {
   const [results, setResults] = useState([]);
@@ -15,7 +15,7 @@ const SearchResults = () => {
     }
 
     setLoading(true);
-    setError(null); // Reset any previous errors
+    setError(null);
 
     try {
       const response = await axios.get(
@@ -36,15 +36,18 @@ const SearchResults = () => {
 
   return (
     <div className="search-results-container">
-      <h3 className="search-title">Search by Student ID</h3>
-      <div className="search-input">
+      <h3 className="search-title">Search result by Student ID</h3>
+      <div className="search-input-container">
         <input
+          className="search-input"
           type="text"
           placeholder="Enter Student ID"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
-        <button onClick={handleSearch}>Search</button>
+        <button onClick={handleSearch} className="search-button">
+          Search
+        </button>
       </div>
 
       {loading && <p className="loading">Loading...</p>}
