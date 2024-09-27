@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import "../../styles/StudentDashboard.css"; // Import your CSS file
-import DashbordInfo from "../../components/DashbordInfo"; // Assuming this is correctly imported
 
 const StudentDashboard = ({ studentId }) => {
   const [activeTab, setActiveTab] = useState("profile"); // Default tab

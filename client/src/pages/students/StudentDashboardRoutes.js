@@ -17,6 +17,7 @@ const StudentDashboardRoutes = () => {
         <Route path="results" element={<SearchResults />} />
         <Route path="/home" element={<HomePage />} />
         <Route path="/dashbaordInfo" element={<DashbordInfo />} />
+        <Route path="/" element={<DashbordInfo />} />
       </Route>
     </Routes>
   );
