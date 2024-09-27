@@ -94,7 +94,7 @@
 }
 
 .new-nav-link {
-  color: #ffffff; /* Link color */
+  color: #00bfff; /* Link color */
   font-size: 1.2rem; /* Font size for links */
   text-transform: uppercase;
   transition: color 0.3s ease, transform 0.3s ease;
