@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "./Layout/Layout.js";
-
+import ".././styles/ContactPage.css";
 // Import the Layout component
 
 const ContactPage = () => {
@@ -10,9 +10,25 @@ const ContactPage = () => {
       <div className="left-column">
         <h2>Contact Us</h2>
         <p>If you have any questions or feedback, feel free to reach out!</p>
-        <p>Email: support@example.com</p>
-        <p>Phone: +1 (234) 567-8901</p>
-      </div>
+        <p>Email: resultmanagementsystem@gmail.com</p>
+        <p>Phone: +91 9565816219</p>
+        <p><strong>Office Address:</strong></p>
+        <p>Banglore, ST 12345, India</p>
+        <p>1234 Elm Street, Suite 567</p>
+        <p><strong>Operating Hours:</strong></p>
+        <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+        <p>Saturday: 10:00 AM - 4:00 PM</p>
+        <p>Sunday: Closed</p>
+
+        <p><strong>Connect with us:</strong></p>
+           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a> | 
+           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a> | 
+           <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+
+
+
+
 
       {/* Right column content */}
       <div className="right-column">

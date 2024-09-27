@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "./Layout/Layout.js";
 // Import the Layout component
+import ".././styles/AboutPage.css";
 
 const AboutPage = () => {
   return (
