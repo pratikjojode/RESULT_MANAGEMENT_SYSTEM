@@ -5,6 +5,8 @@ import AboutPage from "./components/AboutPage";
 import ContactPage from "./components/ContactPage";
 import Login from "./pages/students/Login";
 import Register from "./pages/students/Register";
+import StudentDashboard from "./pages/students/StudentDashboard";
+import StudentDashboardRoutes from "./pages/students/StudentDashboardRoutes";
 
 const App = () => {
   return (
@@ -16,6 +18,10 @@ const App = () => {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route
+          path="/studentDashbaord/*"
+          element={<StudentDashboardRoutes />}
+        />
       </Routes>
     </div>
   );

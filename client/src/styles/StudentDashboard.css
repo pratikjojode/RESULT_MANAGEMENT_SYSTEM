@@ -1,0 +1,36 @@
+/* StudentDashboard.css */
+.dashboard {
+  display: flex;
+  height: 100vh; /* Full height */
+}
+
+.sidebar {
+  width: 250px; /* Width of the sidebar */
+  background-color: #003366; /* Dark blue background */
+  color: white; /* White text */
+  padding: 20px; /* Padding around the sidebar */
+}
+
+.sidebar h2 {
+  margin: 0 0 20px; /* Margin below the heading */
+}
+
+.sidebar ul {
+  list-style-type: none; /* Remove default list style */
+  padding: 0; /* Remove default padding */
+}
+
+.sidebar ul li {
+  margin: 15px 0; /* Space between items */
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+.sidebar ul li:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+.main-content {
+  flex-grow: 1; /* Take up remaining space */
+  padding: 20px; /* Padding around main content */
+  background-color: #f5f5f5; /* Light background for main content */
+}

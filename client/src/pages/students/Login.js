@@ -33,7 +33,7 @@ const Login = () => {
       );
       setSuccess(response.data.message);
       toast.success("Login successful!");
-      navigate("/home");
+      navigate("/studentDashbaord");
       setError("");
     } catch (err) {
       setError(err.response.data.message);

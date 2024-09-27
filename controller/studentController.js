@@ -86,7 +86,7 @@ export const studentLoginConttroller = async (req, res) => {
 
 export const getStudentOnIdController = async (req, res) => {
   try {
-    const { studentId } = req.body;
+    const { id: studentId } = req.params; // Get student ID from URL parameter
     if (!studentId) {
       return res.status(400).send({
         success: false,
