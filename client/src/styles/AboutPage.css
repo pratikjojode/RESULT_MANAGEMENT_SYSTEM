@@ -15,6 +15,7 @@ body {
     padding: 20px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    background-image: radial-gradient(circle at center center, rgb(233, 255, 32),rgb(176, 209, 39),rgb(118, 163, 47),rgb(61, 116, 54),rgb(3, 70, 61));
   }
   
   /* Grid layout */

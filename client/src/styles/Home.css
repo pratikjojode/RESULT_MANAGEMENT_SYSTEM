@@ -8,7 +8,7 @@ body {
     repeating-linear-gradient(45deg, rgb(56,56,56) 0px, rgb(56,56,56) 5px, transparent 5px, transparent 6px),
     linear-gradient(90deg, rgb(33,33,33), rgb(33,33,33));
   min-height: calc(100vh - 60px);
-  color: white;
+  color: black;
 }
 
 .home-container {
@@ -16,6 +16,7 @@ body {
   justify-content: space-between;
   padding: 40px;
   gap: 20px;
+  color: black;
 }
 
 .column {
@@ -23,7 +24,9 @@ body {
   padding: 20px;
   background-color: rgba(0, 0, 0, 0.7); /* Transparent black for readability */
   border-radius: 8px;
+  color: black;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  background-image: radial-gradient(circle at center center, rgb(233, 255, 32),rgb(176, 209, 39),rgb(118, 163, 47),rgb(61, 116, 54),rgb(3, 70, 61));
 }
 
 /* Headings */
@@ -37,6 +40,7 @@ h1 {
 p {
   font-size: 1.2em;
   line-height: 1.6;
+  color: black;
 }
 
 /* Unordered List */
@@ -71,12 +75,14 @@ ul li::before {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  background-image: radial-gradient(circle at center center, rgb(233, 255, 32),rgb(176, 209, 39),rgb(118, 163, 47),rgb(61, 116, 54),rgb(3, 70, 61));
 }
 
 .footer-content {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  color: black;
 }
 
 .footer-section {
@@ -114,11 +120,12 @@ ul li::before {
   width: 100%;
   padding: 20px 0;
   border-top: 1px solid #00ffcc;
+  color: black;
 }
 
 .footer-bottom p {
   font-size: 1em;
-  color: #aaaaaa;
+  color: black;
 }
 
 @media (max-width: 768px) {
