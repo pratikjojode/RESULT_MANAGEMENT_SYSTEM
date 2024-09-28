@@ -1,0 +1,62 @@
+.admin-sidebar {
+  width: 300px;
+  background-color: rgb(90, 34, 222); /* Bold move! Keepin' it vibrant */
+  height: 100vh;
+  position: fixed; /* Sticky sidebar magic */
+  top: 0;
+  left: 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Fancy shadow for depth */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  z-index: 100; /* Keep it on top */
+}
+
+body {
+  background-image: url("../assets/pastel-blue-vignette-concrete-textured-background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: black;
+  margin-left: 300px; /* Adjust for the fixed sidebar */
+  font-family: "Arial", sans-serif; /* Clean, modern font for class */
+}
+
+.admin-sidebar ul {
+  padding: 0;
+  margin-top: 20px; /* Some breathing space */
+  list-style: none; /* No dots, just sleek */
+}
+
+.admin-sidebar ul li {
+  background-color: azure;
+  padding: 15px 10px;
+  margin-bottom: 10px; /* Separate those list items a bit */
+  border-radius: 8px;
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+.admin-sidebar ul li:hover {
+  background-color: #f0f0f0; /* Lighter on hover, ooh fancy! */
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  font-weight: 600; /* Slightly bolder text */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.link:hover {
+  color: #5a22de; /* Color pop on hover */
+}
+
+.title {
+  padding: 20px;
+  font-size: 40px;
+  color: white; /* Title in white for more contrast */
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Stylish divider */
+  margin-bottom: 20px;
+}

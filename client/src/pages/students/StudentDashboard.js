@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
-import "../../styles/StudentDashboard.css"; // Import your CSS file
+import "../../styles/StudentDashboard.css";
 
 const StudentDashboard = ({ studentId }) => {
-  const [activeTab, setActiveTab] = useState("profile"); // Default tab
+  const [activeTab, setActiveTab] = useState("profile");
 
   return (
     <div className="dashboard">
@@ -42,10 +42,9 @@ const StudentDashboard = ({ studentId }) => {
             ID from your authority: <em>EX: STUXXXXXXXXXX</em>
           </li>
 
-          {/* Properly add the dashboard link here */}
           <li>
             <Link
-              to="dashbaordInfo" // Add the correct route if needed
+              to="dashbaordInfo"
               className={activeTab === "dashboard" ? "active" : ""}
               onClick={() => setActiveTab("dashboard")}
             >

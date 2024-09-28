@@ -9,6 +9,8 @@ import Register from "./pages/students/Register";
 
 import StudentDashboardRoutes from "./pages/students/StudentDashboardRoutes";
 
+import AdminDashboardRoutes from "./pages/admin/AdminDashboardRoutes";
+
 const App = () => {
   return (
     <div>
@@ -19,7 +21,7 @@ const App = () => {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-
+        <Route path="/adminDashboard/*" element={<AdminDashboardRoutes />} />
         <Route
           path="/studentDashbaord/*"
           element={<StudentDashboardRoutes />}
