@@ -1,4 +1,5 @@
 import React from "react";
+import { useState, useEffect } from 'react';
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import AboutPage from "./components/AboutPage";
@@ -27,4 +28,8 @@ const App = () => {
   );
 };
 
+
+
 export default App;
+
+

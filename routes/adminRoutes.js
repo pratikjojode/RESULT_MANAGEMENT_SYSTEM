@@ -13,6 +13,8 @@ const upload = multer({ storage });
 //routes for admin register
 router.post("/register", registerAdmin);
 
+
+
 //routes for admin login
 router.post("/login", loginAdmin);
 router.post("/upload-marks", uploadSingleFile, uploadMarksController);
