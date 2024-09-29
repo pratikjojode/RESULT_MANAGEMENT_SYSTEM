@@ -1,58 +1,82 @@
+/* AdminDashboard.css */
+
+/* General layout */
+.dashboard {
+  display: flex;
+  min-height: 100vh; /* Full height for the dashboard */
+  background-color: #f4f4f9; /* Light background for contrast */
+}
+
+/* Sidebar styling */
 .admin-sidebar {
-  width: 300px;
-  background-color: rgb(90, 34, 222); /* Bold color choice */
-  height: 100vh;
-  position: fixed; /* Keep it fixed */
-  top: 0;
-  left: 0;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Add some depth */
+  width: 250px;
+  background-color: #003366; /* Dark blue background */
+  padding: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  z-index: 100; /* Stay on top */
-}
-
-.admin-sidebar ul {
-  padding: 0;
-  margin-top: 20px;
-  list-style: none; /* Remove bullets */
-}
-
-.admin-sidebar ul li {
-  background-color: azure;
-  padding: 15px 10px;
-  margin-bottom: 10px; /* Add space between items */
-  border-radius: 8px;
-  transition: background-color 0.3s ease; /* Smooth transition */
-}
-
-.admin-sidebar ul li:hover {
-  background-color: #f0f0f0; /* Lighter on hover */
-}
-
-.link {
-  text-decoration: none;
-  color: black;
-  font-size: 20px;
-  font-weight: 600; /* Slightly bolder for emphasis */
-}
-
-.link:hover {
-  color: #5a22de; /* Change color on hover */
+  align-items: flex-start;
 }
 
 .title {
-  padding: 20px;
-  font-size: 40px;
-  color: white; /* White for contrast */
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
   text-align: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Stylish divider */
-  margin-bottom: 20px;
 }
 
+/* Sidebar menu */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 1.5rem;
+}
+
+li .active {
+  font-weight: bold;
+  color: #ffdd57; /* Highlight active tab */
+}
+
+li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  display: block;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+li a:hover {
+  background-color: #004c99; /* Hover effect */
+  color: #ffdd57; /* Light yellow on hover */
+}
+
+/* Main content area */
 .main-content {
-  margin-left: 320px; /* Space for the sidebar */
-  padding: 20px; /* Add padding to the main content */
-  background: white; /* Clean background for content */
-  min-height: 100vh; /* Make sure it fills the viewport */
+  flex: 1; /* Take up remaining space */
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 10px;
+  margin: 2rem;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .dashboard {
+    flex-direction: column;
+  }
+
+  .admin-sidebar {
+    width: 100%;
+    align-items: center;
+  }
+
+  .main-content {
+    margin: 1rem;
+    padding: 1rem;
+  }
 }

@@ -208,3 +208,20 @@ export const getStudentResult = async (req, res) => {
     });
   }
 };
+
+export const getAllStudentResults = async (req, res) => {
+  try {
+    const students = await studentModel.find(); // Fetch all students
+
+    return res.status(200).json({
+      success: true,
+      students, // Return the list of students
+    });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({
+      success: false,
+      message: "Server error",
+    });
+  }
+};

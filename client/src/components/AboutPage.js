@@ -16,7 +16,7 @@ const AboutPage = () => {
           Our platform is designed to help admins easily upload and manage
           attendance, project reviews, assessments, and more.
         </p>
-        
+
         {/* Key Features Section */}
         <h2>Key Features</h2>
         <ul>
@@ -45,16 +45,16 @@ const AboutPage = () => {
         <h2>Our Values</h2>
         <p>
           We are committed to ensuring transparency, accuracy, and efficiency in
-          everything we do. Our platform is built on the principles of integrity,
-          innovation, and user-centric design.
+          everything we do. Our platform is built on the principles of
+          integrity, innovation, and user-centric design.
         </p>
 
         {/* How We Work Section */}
         <h2>How We Work</h2>
         <p>
-          We work closely with educational institutions to ensure that our system
-          fits their specific needs. From development to deployment, we are
-          focused on delivering a user-friendly and scalable solution.
+          We work closely with educational institutions to ensure that our
+          system fits their specific needs. From development to deployment, we
+          are focused on delivering a user-friendly and scalable solution.
         </p>
 
         {/* Meet the Team Section */}

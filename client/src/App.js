@@ -10,6 +10,8 @@ import Register from "./pages/students/Register";
 import StudentDashboardRoutes from "./pages/students/StudentDashboardRoutes";
 
 import AdminDashboardRoutes from "./pages/admin/AdminDashboardRoutes";
+import AdminLogin from "./components/AdminLogin";
+import AdminRegister from "./components/AdminRegister";
 
 const App = () => {
   return (
@@ -21,6 +23,8 @@ const App = () => {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/adminLogin" element={<AdminLogin />} />
+        <Route path="/adminRegister" element={<AdminRegister />} />
         <Route path="/adminDashboard/*" element={<AdminDashboardRoutes />} />
         <Route
           path="/studentDashbaord/*"

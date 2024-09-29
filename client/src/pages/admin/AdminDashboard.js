@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, Outlet } from "react-router-dom"; // Import Link and Outlet for routing
 import "../../styles/AdminDashboard.css"; // Import your CSS file for admin dashboard styling
+import ViewAllStudents from "./ViewAllStudents";
 
 const AdminDashboard = () => {
   const [activeTab, setActiveTab] = useState("viewStudents"); // Default active tab
@@ -10,7 +11,7 @@ const AdminDashboard = () => {
       <aside className="admin-sidebar">
         <h2 className="title">Admin Dashboard</h2>
         <ul>
-          <li>
+          <li className="li">
             <Link
               to="view-students" // Route to view all students
               className={activeTab === "viewStudents" ? "active" : ""}
@@ -37,7 +38,7 @@ const AdminDashboard = () => {
               Upload Marks
             </Link>
           </li>
-          {/* You can add more links here as needed */}
+
           <li>
             <Link
               to="/home"
@@ -50,6 +51,7 @@ const AdminDashboard = () => {
         </ul>
       </aside>
       <main className="main-content">
+        <ViewAllStudents />
         <Outlet />
       </main>
     </div>

@@ -2,6 +2,7 @@ import express from "express";
 import {
   createResult,
   getAllStudentController,
+  getAllStudentResults,
   getStudentOnIdController,
   getStudentResult,
   studentLoginConttroller,
@@ -22,4 +23,8 @@ router.get("/getAllStudents", getAllStudentController);
 router.post("/createStudentresult/:studentId", createResult);
 
 router.get("/getStudentresult/:studentId", getStudentResult);
+
+// Add this route to your student routes file
+router.get("/getAllStudentResults", getAllStudentResults);
+
 export default router;

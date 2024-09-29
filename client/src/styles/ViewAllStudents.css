@@ -1,0 +1,95 @@
+/* Container styles */
+.students-container {
+  margin: 0 auto;
+  width: 90%;
+  padding: 30px;
+  background-color: #ffffff; /* Changed to white for a cleaner look */
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+/* Title */
+.title {
+  text-align: center;
+  color: #003366; /* Premium blue color */
+  font-size: 36px; /* Increased font size */
+  margin-bottom: 30px; /* Increased bottom margin */
+  font-weight: 600; /* Semi-bold */
+}
+
+/* Error message */
+.error {
+  color: #e74c3c; /* Red color for errors */
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 16px; /* Increased font size for better visibility */
+}
+
+/* Card container for students */
+.students-card-container {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(300px, 1fr)
+  ); /* Adjusted minimum width for cards */
+  gap: 20px;
+  background-color: green;
+  padding: 20px;
+}
+
+/* Student Card */
+.student-card {
+  background-color: #f8f9fa; /* Light grey background for cards */
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Deeper shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.student-card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Shadow on hover */
+}
+
+/* Student Name */
+.student-name {
+  font-weight: bold;
+  color: #2c3e50; /* Darker color for names */
+  margin-bottom: 10px;
+  font-size: 20px; /* Slightly larger font size */
+}
+
+/* Student Details */
+.student-details {
+  margin: 8px 0;
+  color: #555; /* Grey color for details */
+  font-size: 16px; /* Increased font size */
+}
+
+/* No Students Available */
+.no-students {
+  text-align: center;
+  color: #999; /* Light grey color */
+  font-size: 18px; /* Slightly larger font size */
+}
+
+/* Add responsive design */
+@media (max-width: 600px) {
+  .students-container {
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .student-details {
+    font-size: 14px;
+  }
+
+  .no-students {
+    font-size: 16px;
+  }
+}

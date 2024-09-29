@@ -1,0 +1,87 @@
+/* ShowAllResults.css */
+
+.results-container {
+  margin: 3rem auto;
+  padding: 2rem;
+  background: linear-gradient(to bottom right, #ffffff, #f9f9f9);
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #003366;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.results-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.result-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid #e1e1e1;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  position: relative; /* Allow for pseudo-element positioning */
+  overflow: hidden; /* Ensure child elements are contained */
+}
+
+.result-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  border-color: #003366;
+}
+
+.result-card h2 {
+  margin: 0 0 1rem 0;
+  color: #003366; /* Darker color for headings */
+  font-size: 1.9rem;
+  font-weight: 600;
+}
+
+.result-card p {
+  margin: 0.5rem 0;
+  color: #555;
+  font-size: 1.1rem;
+}
+
+/* Marks container styling */
+.marks-container {
+  margin-top: 1rem; /* Space above marks */
+  color: #333; /* Color for marks */
+}
+
+/* Each mark entry */
+.marks-container p {
+  display: flex; /* Flex display for subject-mark pairs */
+  justify-content: space-between; /* Space out the subject and mark */
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+/* Highlight for marks */
+.mark-value {
+  font-weight: bold; /* Highlight marks */
+  color: #003366; /* Highlight color */
+  background-color: #e6f0ff; /* Light blue background for marks */
+  border-radius: 6px; /* Rounded corners for marks */
+  padding: 0.2rem 0.5rem; /* Padding around marks */
+}
+
+/* Error styling */
+.error {
+  color: red;
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
