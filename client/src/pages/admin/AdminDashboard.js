@@ -48,6 +48,15 @@ const AdminDashboard = () => {
               Home
             </Link>
           </li>
+          <li>
+            <Link
+              to="/createResult"
+              className={activeTab === "home" ? "active" : ""}
+              onClick={() => setActiveTab("createResult")}
+            >
+              Create result
+            </Link>
+          </li>
         </ul>
       </aside>
       <main className="main-content">

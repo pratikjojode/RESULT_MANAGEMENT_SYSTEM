@@ -1,0 +1,67 @@
+.result-form-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #ffffff; /* White background for the form */
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+h2 {
+  text-align: center; /* Center the title */
+  color: #0052cc; /* Blue color for the title */
+}
+
+.form-group {
+  margin-bottom: 20px; /* Space between form elements */
+}
+
+label {
+  display: block; /* Block display for labels */
+  margin-bottom: 8px; /* Space between label and input */
+  font-weight: bold; /* Bold labels */
+}
+
+input[type="number"],
+input[type="text"],
+textarea {
+  width: 100%; /* Full width inputs */
+  padding: 10px; /* Padding inside inputs */
+  border: 1px solid #d9d9d9; /* Light gray border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px; /* Font size for inputs */
+  transition: border-color 0.3s; /* Transition for border color */
+}
+
+input[type="number"]:focus,
+input[type="text"]:focus,
+textarea:focus {
+  border-color: #0052cc; /* Change border color on focus */
+  outline: none; /* Remove default outline */
+}
+
+textarea {
+  resize: vertical; /* Allow vertical resizing */
+  height: 100px; /* Set a fixed height for the textarea */
+}
+
+.submit-button {
+  width: 100%; /* Full width button */
+  padding: 10px;
+  background-color: #0052cc; /* Button color */
+  color: #ffffff; /* Button text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 18px; /* Font size for button */
+  cursor: pointer; /* Change cursor on hover */
+  transition: background-color 0.3s; /* Transition for background color */
+}
+
+.submit-button:hover {
+  background-color: #0041a1; /* Darker button color on hover */
+}
+
+.submit-button:disabled {
+  background-color: #cccccc; /* Gray button color when disabled */
+  cursor: not-allowed; /* Change cursor when disabled */
+}
