@@ -73,7 +73,7 @@ const HomePage = () => {
             </ul>
           </div>
         </div>
-        <Fotter />
+      
       </div>
 
       {/* Footer */}

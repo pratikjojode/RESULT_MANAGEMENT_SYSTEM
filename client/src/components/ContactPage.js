@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "./Layout/Layout.js";
 import ".././styles/ContactPage.css"; // Importing page-specific CSS
+import Footer from "./Fotter.js";
 
 const ContactPage = () => {
   return (
