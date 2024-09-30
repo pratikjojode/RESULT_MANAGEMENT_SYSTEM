@@ -9,6 +9,7 @@ form {
   background-color: #161d6f;
   border-radius: 10px;
   box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+  background-image: radial-gradient(circle at top center, rgb(244, 234, 104),rgb(234, 179, 103),rgb(224, 125, 103),rgb(214, 70, 102),rgb(204, 15, 101));
 }
 
 /* Input fields */
@@ -67,6 +68,17 @@ p[style="color: green"] {
 h2 {
   text-align: center;
   margin-bottom: 20px;
-  color: #333;
+  color: white;
   font-family: "Arial", sans-serif;
+}
+
+.register-container{
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-image: radial-gradient(circle at top center, rgb(244, 234, 104),rgb(234, 179, 103),rgb(224, 125, 103),rgb(214, 70, 102),rgb(204, 15, 101));
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+
 }

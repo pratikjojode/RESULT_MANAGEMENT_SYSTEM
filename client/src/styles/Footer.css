@@ -54,7 +54,7 @@
   color: #ffdd57; /* Hover effect for links */
 }
 
-.footer-bottom {
+.footer-bottom p{
   text-align: center;
   padding: 1rem;
   background-color: #002244; /* Slightly darker for bottom */

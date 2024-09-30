@@ -16,7 +16,9 @@
   color:black;
   background-image: radial-gradient(circle at center center, rgb(233, 255, 32),rgb(176, 209, 39),rgb(118, 163, 47),rgb(61, 116, 54),rgb(3, 70, 61));
 }
-
+.left-column p{
+  color: black;
+}
 .address-info, .hours-info, .social-media {
   margin-top: 20px;
   color:black;
@@ -26,7 +28,7 @@
 .social-icon {
   margin-right: 10px;
   text-decoration: none;
-  color: #007bff;
+  color: darkblue;
 }
 
 .map-container {
@@ -51,12 +53,13 @@
   margin-top: 30px;
 }
 
-.faq-item {
+.faq-item  strong{
   margin-bottom: 15px;
+  
 }
 
 .faq-item strong {
-  color: #007bff;
+  color:black;
 }
 
 /* Form styles */
@@ -81,4 +84,15 @@
 
 .btn-primary:hover {
   background-color: #0056b3;
+}
+
+.form-label{
+  color: white;
+}
+
+.faq-item p{
+  color: black;
+}
+h3{
+  color: darkblue;
 }

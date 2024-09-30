@@ -41,7 +41,7 @@ ul {
 ul li {
   margin-bottom: 1.2rem;
   font-size: 1.1rem;
-  color: #555;
+  color: black;
   display: flex;
   align-items: center;
 }
@@ -76,6 +76,7 @@ ul li::before {
 .footer-section p,
 .footer-section ul li a {
   color: #dddddd;
+  
 }
 
 .footer-section ul li {
