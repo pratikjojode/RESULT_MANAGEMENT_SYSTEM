@@ -47,7 +47,7 @@ const CreateResultForm = () => {
         `/api/v1/student/createStudentresult/${studentId}`,
         formData
       );
-      alert(response.data.message); // Display success message
+      alert(response.data.message); 
       setFormData({
         // Reset form data
         totalMarks: "",

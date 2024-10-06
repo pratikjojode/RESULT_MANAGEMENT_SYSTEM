@@ -50,7 +50,7 @@ const AdminDashboard = () => {
           </li>
           <li>
             <Link
-              to="/createResult"
+              to="createResult/:studentId"
               className={activeTab === "home" ? "active" : ""}
               onClick={() => setActiveTab("createResult")}
             >

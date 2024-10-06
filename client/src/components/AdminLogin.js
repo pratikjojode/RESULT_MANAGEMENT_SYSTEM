@@ -17,8 +17,7 @@ const AdminLogin = () => {
         password,
       });
       if (response.data.success) {
-        localStorage.setItem("admin", JSON.stringify(response.data.admin));
-        navigate("/adminDashboard"); // Navigate to admin dashboard on successful login
+        navigate("/adminDashboard");
       } else {
         setError(response.data.message);
       }

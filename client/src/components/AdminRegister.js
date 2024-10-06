@@ -19,7 +19,7 @@ const AdminRegister = () => {
         password,
       });
       if (response.data.success) {
-        navigate("/admin-login"); // Redirect to login after successful registration
+        navigate("/adminlogin"); // Redirect to login after successful registration
       } else {
         setError(response.data.message);
       }
