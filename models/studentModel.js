@@ -52,11 +52,14 @@ studentSchema.pre("save", function (next) {
   next();
 });
 
-// compare the password
 studentSchema.methods.comparePassword = async function (userPassword) {
+  console.log("User password:", userPassword);
+  console.log("Hashed password:", this.password);
   const isMatch = await bcrypt.compare(userPassword, this.password);
+  console.log("Password match:", isMatch);
   return isMatch;
 };
+
 // josn webtoken
 studentSchema.methods.createJWT = function () {
   return JWT.sign({ userId: this._id }, process.env.SECRET_KEY_JWT, {
