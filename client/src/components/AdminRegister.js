@@ -19,7 +19,7 @@ const AdminRegister = () => {
         password,
       });
       if (response.data.success) {
-        navigate("/adminlogin"); // Redirect to login after successful registration
+        navigate("/adminDashboard/adminlogin");
       } else {
         setError(response.data.message);
       }
@@ -56,7 +56,8 @@ const AdminRegister = () => {
         />
         <button type="submit">Register</button>
         <p>
-          Don't have an account? <Link to="/adminlogin">Login here</Link>
+          Don't have an account?
+          <Link to="/adminDashboard/adminlogin">Login here</Link>
         </p>
       </form>
       {error && <p>{error}</p>}

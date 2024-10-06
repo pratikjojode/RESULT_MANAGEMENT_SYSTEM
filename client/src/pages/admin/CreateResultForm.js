@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import "../../styles/CreateResultForm.css"; // Custom CSS for additional styling
 
 const CreateResultForm = () => {
   const { studentId } = useParams(); // Get studentId from the URL
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     totalMarks: "",
     grade: "",
@@ -47,9 +48,9 @@ const CreateResultForm = () => {
         `/api/v1/student/createStudentresult/${studentId}`,
         formData
       );
-      alert(response.data.message); 
+      alert(response.data.message);
+      navigate("/adminDashboard");
       setFormData({
-        // Reset form data
         totalMarks: "",
         grade: "",
         passed: false,

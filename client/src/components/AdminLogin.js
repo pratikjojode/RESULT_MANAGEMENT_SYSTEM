@@ -50,7 +50,8 @@ const AdminLogin = () => {
       </form>
       {error && <p className="error">{error}</p>}
       <p>
-        Don't have an account? <Link to="/adminRegister">Register here</Link>
+        Don't have an account?
+        <Link to="/adminDashboard/adminRegister">Register here</Link>
       </p>
     </div>
   );
