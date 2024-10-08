@@ -1,7 +1,8 @@
 // AdminLogin.js
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate, Link } from "react-router-dom"; // Import Link for navigation
+import { useNavigate, Link } from "react-router-dom";
+import "../../src/styles/AdminLogin.css";
 const AdminLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -27,7 +28,7 @@ const AdminLogin = () => {
   };
 
   return (
-    <div>
+    <div className="Admin-Container">
       <h1>Admin Login</h1>
       <form onSubmit={handleSubmit}>
         <input
