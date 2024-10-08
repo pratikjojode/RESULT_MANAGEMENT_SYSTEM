@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom"; // For navigation after registration
-
+import "../../src/styles/AdminRegister.css";
 const AdminRegister = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -30,7 +30,7 @@ const AdminRegister = () => {
   };
 
   return (
-    <div>
+    <div className="Register-Container">
       <h1>Admin Register</h1>
       <form onSubmit={handleSubmit}>
         <input
