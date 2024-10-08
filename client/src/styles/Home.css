@@ -57,6 +57,7 @@ ul li::before {
   background-color: #003366; /* Dark footer background */
   color: white;
   padding: 2rem 0;
+  margin-bottom: 50px;
 }
 
 .footer-content {
