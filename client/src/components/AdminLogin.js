@@ -54,7 +54,9 @@ const AdminLogin = () => {
         <Link to="/adminDashboard/adminRegister">Register here</Link>
       </p>
     </div>
+    
   );
+
 };
 
 export default AdminLogin;

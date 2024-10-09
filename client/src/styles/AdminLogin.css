@@ -10,7 +10,19 @@
     font-family: Arial, sans-serif;
     background-image: radial-gradient(circle at top center, rgb(244, 234, 104),rgb(234, 179, 103),rgb(224, 125, 103),rgb(214, 70, 102),rgb(204, 15, 101));
   }
-  
+
+  body {
+    background-image: linear-gradient(45deg, rgb(2, 6, 1) 0%, rgb(2, 6, 1) 14.286%,rgb(8, 29, 31) 14.286%, rgb(8, 29, 31) 28.572%,rgb(13, 52, 61) 28.572%, rgb(13, 52, 61) 42.858%,rgb(19, 75, 92) 42.858%, rgb(19, 75, 92) 57.144%,rgb(25, 98, 122) 57.144%, rgb(25, 98, 122) 71.43%,rgb(30, 121, 152) 71.43%, rgb(30, 121, 152) 85.716%,rgb(36, 144, 182) 85.716%, rgb(36, 144, 182) 100.002%); /* Add the correct path to your image */
+    background-size: cover;  /* Ensures the image covers the entire page */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    height: 100vh;  /* Sets the height to full viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
   h1 {
     font-size: 24px;
     color: #333;
