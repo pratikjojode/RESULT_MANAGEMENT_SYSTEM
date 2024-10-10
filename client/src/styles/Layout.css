@@ -6,7 +6,6 @@
   margin-top: 5px; /* To push content below the fixed navbar */
   gap: 2rem; /* Gap between the two columns */
   justify-content: space-between;
-  background-image: linear-gradient(45deg, rgb(2, 6, 1) 0%, rgb(2, 6, 1) 14.286%,rgb(8, 29, 31) 14.286%, rgb(8, 29, 31) 28.572%,rgb(13, 52, 61) 28.572%, rgb(13, 52, 61) 42.858%,rgb(19, 75, 92) 42.858%, rgb(19, 75, 92) 57.144%,rgb(25, 98, 122) 57.144%, rgb(25, 98, 122) 71.43%,rgb(30, 121, 152) 71.43%, rgb(30, 121, 152) 85.716%,rgb(36, 144, 182) 85.716%, rgb(36, 144, 182) 100.002%);
 }
 
 .layout-container > * {
