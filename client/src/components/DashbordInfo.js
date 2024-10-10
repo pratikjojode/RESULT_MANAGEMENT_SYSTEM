@@ -10,7 +10,7 @@ const DashbordInfo = () => {
   return (
     <div className="dashboard-info">
       <div className="dashboard-content">
-        <h1>Good afternoon,Student</h1>
+        <h1>Good afternoon,Student!!</h1>
 
         <p>
           Use the navigation links on the left to view your profile, search for
