@@ -16,7 +16,7 @@ router.post("/register", registerAdmin);
 
 
 //routes for admin login
-router.post("/login", loginAdmin)
+router.post("/login", loginAdmin);
 router.post("/upload-marks", uploadSingleFile, uploadMarksController);
 
 export default router;
